@@ -20,6 +20,7 @@
         <module>ArisChat</module>
         <module>ArisPets</module>
         <module>ArisGuard</module>
+        <module>ArisCombat</module>
     </modules>
 
     <properties>

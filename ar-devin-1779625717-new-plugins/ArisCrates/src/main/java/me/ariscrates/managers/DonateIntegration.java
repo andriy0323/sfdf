@@ -73,6 +73,42 @@ public class DonateIntegration {
         }
     }
 
+    /**
+     * Выдаёт кит из ArisDonate напрямую (минуя проверку прав и кулдаун).
+     * Возвращает true, если кит был выдан.
+     */
+    public boolean giveKit(Player player, String kitId) {
+        if (!available) {
+            plugin.getLogger().warning("[DI] ArisDonate недоступен — не могу выдать кит " + kitId);
+            return false;
+        }
+        try {
+            Method getKitManager = arisDonatePlugin.getClass().getMethod("getKitManager");
+            Object km = getKitManager.invoke(arisDonatePlugin);
+            Method getKit = km.getClass().getMethod("getKit", String.class);
+            Object kit = getKit.invoke(km, kitId);
+            if (kit == null) {
+                plugin.getLogger().warning("[DI] Кит '" + kitId + "' не найден в ArisDonate.");
+                return false;
+            }
+            Method giveKit = km.getClass().getMethod("giveKit", Player.class, kit.getClass());
+            giveKit.invoke(km, player, kit);
+            plugin.getLogger().info("[Крейт] Кит " + kitId + " выдан игроку " + player.getName());
+            return true;
+        } catch (Exception e) {
+            plugin.getLogger().warning("[DI] giveKit ошибка: " + e);
+            // Fallback через команду консоли (требует игрока в сети)
+            try {
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(),
+                        "kit give " + player.getName() + " " + kitId);
+                return true;
+            } catch (Exception e2) {
+                plugin.getLogger().severe("[DI] Fallback тоже не сработал: " + e2);
+                return false;
+            }
+        }
+    }
+
     public String getRankGradientName(String rankId) {
         if (!available) return rankId;
         try {

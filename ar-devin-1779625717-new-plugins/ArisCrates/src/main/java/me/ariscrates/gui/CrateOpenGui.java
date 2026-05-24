@@ -63,6 +63,8 @@ public class CrateOpenGui {
             lore.add(Msg.parse("&7Шанс: &e" + String.format("%.1f", pct) + "%"));
             if (r.isDonateReward()) {
                 lore.add(Msg.parse("&7Тип: &cДонат-ранг"));
+            } else if (r.isKitReward()) {
+                lore.add(Msg.parse("&7Тип: &dКит &7(" + r.kitId() + ")"));
             } else {
                 lore.add(Msg.parse("&7Кол-во: &f" + r.item().getAmount()));
             }

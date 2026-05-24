@@ -315,6 +315,20 @@ public class CrateAnimationGui {
                 plugin.getLogger().warning("DonateIntegration недоступна!");
                 player.sendMessage(Msg.parse("&cОшибка: ArisDonate не доступен. Обратитесь к администрации."));
             }
+        } else if (reward.isKitReward()) {
+            var di = plugin.getDonateIntegration();
+            if (di != null && di.isAvailable()) {
+                boolean given = di.giveKit(player, reward.kitId());
+                if (given) {
+                    player.sendMessage(Msg.parse("&a&l✓ &aВам выдан кит &e" + reward.kitId()
+                            + " &7(" + rarityColor + rarityName + "&7) &aиз " + crate.displayName()));
+                } else {
+                    player.sendMessage(Msg.parse("&cНе удалось выдать кит &e" + reward.kitId()
+                            + "&c. Обратитесь к администрации."));
+                }
+            } else {
+                player.sendMessage(Msg.parse("&cОшибка: ArisDonate не доступен — кит не выдан."));
+            }
         } else {
             ItemStack item = reward.item().clone();
             var leftover = player.getInventory().addItem(item);

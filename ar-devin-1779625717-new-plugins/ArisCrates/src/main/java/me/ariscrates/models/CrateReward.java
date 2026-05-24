@@ -4,16 +4,23 @@ import org.bukkit.inventory.ItemStack;
 
 /**
  * Награда крейта.
- * Если donateRankId != null — это донат-награда (выдаётся ранг, а не предмет).
+ *   donateRankId != null  — донат-награда (выдаётся ранг)
+ *   kitId       != null   — кит-награда (выдаётся кит из ArisDonate)
+ *   иначе — обычный предмет.
  */
 public record CrateReward(
         String display,
         ItemStack item,
         double chance,
         String rarity,
-        String donateRankId
+        String donateRankId,
+        String kitId
 ) {
     public boolean isDonateReward() {
         return donateRankId != null && !donateRankId.isEmpty();
+    }
+
+    public boolean isKitReward() {
+        return kitId != null && !kitId.isEmpty();
     }
 }

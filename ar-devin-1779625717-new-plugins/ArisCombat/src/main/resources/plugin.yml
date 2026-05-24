@@ -1,0 +1,28 @@
+name: ArisCombat
+version: 1.0.0
+main: me.ariscombat.ArisCombatPlugin
+api-version: '1.21'
+description: Combat-tag (КТ) — блокирует команды/флай в бою; combat-log = смерть.
+author: ArisCombat
+load: POSTWORLD
+
+commands:
+  ct:
+    description: Информация о КТ и админ-команды
+    aliases: [combat, combattag, кт]
+    usage: |
+      /ct                 — состояние своего КТ
+      /ct check <ник>     — состояние чужого КТ (стафф)
+      /ct clear <ник>     — снять КТ (админ)
+      /ct reload          — перезагрузить config (админ)
+
+permissions:
+  ariscombat.bypass:
+    description: Полный обход КТ (флай/команды/death-on-log)
+    default: op
+  ariscombat.admin:
+    description: Админ-команды /ct
+    default: op
+  ariscombat.check:
+    description: Просмотр чужого КТ
+    default: op

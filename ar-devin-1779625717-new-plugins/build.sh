@@ -21,4 +21,5 @@ echo
 echo "Готово! Положи на сервер ОБА .jar в plugins/:"
 ls -lh "$SCRIPT_DIR/ArisDonate/target/ArisDonate-1.0.0.jar" \
        "$SCRIPT_DIR/RegionBlocks/target/RegionBlocks-1.0.0.jar" \
-       "$SCRIPT_DIR/ArisGuard/target/ArisGuard-1.0.0.jar"
+       "$SCRIPT_DIR/ArisGuard/target/ArisGuard-1.0.0.jar" \
+       "$SCRIPT_DIR/ArisCombat/target/ArisCombat-1.0.0.jar"

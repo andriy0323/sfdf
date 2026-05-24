@@ -102,6 +102,7 @@ public class CrateManager {
                 String desc = raw.get("display") == null ? "???" : raw.get("display").toString();
                 String rarity = raw.get("rarity") == null ? "common" : raw.get("rarity").toString();
                 String donateRank = raw.get("donate-rank") == null ? null : raw.get("donate-rank").toString();
+                String kitId      = raw.get("kit-id")      == null ? null : raw.get("kit-id").toString();
 
                 if (donateRank != null && !donateRank.isEmpty()) {
                     // Donate reward — use a placeholder item (nether star)
@@ -112,11 +113,21 @@ public class CrateManager {
                         if (parsed != null) iconMat = parsed;
                     }
                     ItemStack icon = new ItemStack(iconMat);
-                    rewards.add(new CrateReward(desc, icon, chance, rarity, donateRank));
+                    rewards.add(new CrateReward(desc, icon, chance, rarity, donateRank, null));
+                } else if (kitId != null && !kitId.isEmpty()) {
+                    // Kit reward — icon material is configurable, default CHEST
+                    Material iconMat = Material.CHEST;
+                    Object iconObj = raw.get("material");
+                    if (iconObj != null) {
+                        Material parsed = Material.matchMaterial(iconObj.toString());
+                        if (parsed != null) iconMat = parsed;
+                    }
+                    ItemStack icon = new ItemStack(iconMat);
+                    rewards.add(new CrateReward(desc, icon, chance, rarity, null, kitId));
                 } else {
                     ItemStack item = parseItem(raw);
                     if (item == null) continue;
-                    rewards.add(new CrateReward(desc, item, chance, rarity, null));
+                    rewards.add(new CrateReward(desc, item, chance, rarity, null, null));
                 }
             }
             if (rewards.isEmpty()) continue;
