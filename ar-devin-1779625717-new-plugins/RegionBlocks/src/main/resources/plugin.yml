@@ -11,8 +11,12 @@ commands:
     description: Управление участниками региона
     usage: /ps add <регион> <ник> | /ps remove <регион> <ник>
   rg:
-    description: Информация о регионах
-    usage: /rg i | /rg info
+    description: Информация о регионах и управление флагами
+    usage: |
+      /rg i                                  — список ваших регионов
+      /rg flags <регион>                     — посмотреть флаги
+      /rg flag <регион> <флаг> <true|false>  — задать флаг (только админ)
+      /rg flag <регион> <флаг> reset         — сбросить в дефолт (только админ)
   givearis:
     description: Выдать блок Арис игроку
     usage: /givearis <ник>

@@ -3,7 +3,10 @@ package me.regionblocks.models;
 import org.bukkit.Location;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 public class Region {
 
@@ -12,6 +15,7 @@ public class Region {
     private final Location center;
     private final RegionTier tier;
     private final List<String> members = new ArrayList<>();
+    private final Map<String, Boolean> flags = new LinkedHashMap<>();
 
     public Region(String name, String owner, Location center, RegionTier tier) {
         this.name = name;
@@ -31,6 +35,12 @@ public class Region {
     public boolean isMember(String nick)  { return members.contains(nick.toLowerCase()); }
     public boolean isOwner(String nick)   { return owner.equalsIgnoreCase(nick); }
     public boolean hasAccess(String nick) { return isOwner(nick) || isMember(nick); }
+
+    /** Флаги региона (только то, что явно задано админом). null = использовать дефолт. */
+    public Map<String, Boolean> getFlags()           { return flags; }
+    public Boolean getFlag(String name)              { return name == null ? null : flags.get(name.toLowerCase(Locale.ROOT)); }
+    public void    setFlag(String name, boolean v)   { if (name != null) flags.put(name.toLowerCase(Locale.ROOT), v); }
+    public void    removeFlag(String name)           { if (name != null) flags.remove(name.toLowerCase(Locale.ROOT)); }
 
     /**
      * Куб размером size×size×size, **центрированный** на блоке региона.

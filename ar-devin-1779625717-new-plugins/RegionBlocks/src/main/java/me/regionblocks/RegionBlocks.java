@@ -46,12 +46,15 @@ public class RegionBlocks extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockPlaceListener(this),       this);
         getServer().getPluginManager().registerEvents(new BlockBreakListener(this),       this);
         getServer().getPluginManager().registerEvents(new ProtectionListener(this),       this);
+        getServer().getPluginManager().registerEvents(new RegionFlagsListener(this),      this);
         getServer().getPluginManager().registerEvents(shopListener,                       this);
         getServer().getPluginManager().registerEvents(new TntExplosionListener(this),     this);
         getServer().getPluginManager().registerEvents(new MinecartExplosionListener(this), this);
 
         getCommand("ps").setExecutor(new PsCommand(this));
-        getCommand("rg").setExecutor(new RgCommand(this));
+        RgCommand rgCmd = new RgCommand(this);
+        getCommand("rg").setExecutor(rgCmd);
+        getCommand("rg").setTabCompleter(rgCmd);
         getCommand("givearis").setExecutor(new GiveArisCommand());
         getCommand("shop").setExecutor(new ShopCommand(this));
         getCommand("aris").setExecutor(new ArisCommand(this));

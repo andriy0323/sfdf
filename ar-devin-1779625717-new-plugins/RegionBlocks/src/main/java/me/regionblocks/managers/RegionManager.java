@@ -121,6 +121,11 @@ public class RegionManager {
 
             Region r = new Region(key, owner, new Location(w, x, y, z), tier);
             for (String m : data.getStringList(path + "members")) r.addMember(m);
+            if (data.isConfigurationSection(path + "flags")) {
+                for (String fk : data.getConfigurationSection(path + "flags").getKeys(false)) {
+                    r.setFlag(fk, data.getBoolean(path + "flags." + fk));
+                }
+            }
             regions.put(key, r);
         }
     }
@@ -136,6 +141,9 @@ public class RegionManager {
             data.set(path + "y",       r.getCenter().getY());
             data.set(path + "z",       r.getCenter().getZ());
             data.set(path + "members", r.getMembers());
+            for (java.util.Map.Entry<String, Boolean> f : r.getFlags().entrySet()) {
+                data.set(path + "flags." + f.getKey(), f.getValue());
+            }
         }
         try { data.save(dataFile); }
         catch (IOException e) { plugin.getLogger().severe("Ошибка сохранения regions.yml: " + e.getMessage()); }
