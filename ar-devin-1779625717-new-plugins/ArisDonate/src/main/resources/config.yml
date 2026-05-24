@@ -164,9 +164,9 @@ ranks:
     kit: cosmos
     description:
       - "&7Глубокий синий донат:"
-      - "&7доступ к /v (vanish) и /god."
+      - "&7доступ к /god, /cure и /feed."
     commands:
-      - "/sethome (×75), /v, /god"
+      - "/sethome (×75), /god"
       - "/feed, /heal, /cure"
       - "/kit cosmos"
 
@@ -207,8 +207,8 @@ ranks:
       - "/fly, /speed 10, /god"
       - "/inv, /enderchest"
       - "/kit aris — Prot V незеритка + Sharp VI / Fire Aspect III"
-      - "/tpa, /tphere, /back, /top, /jump"
-      - "/v (vanish), /nick, /hat"
+      - "/tpa, /back, /top, /jump"
+      - "/nick, /hat"
 
   arisplus:
     display-name: "✦ ArisPlus"
@@ -226,13 +226,13 @@ ranks:
       - "&7шалкер со всеми материалами и тотемами."
     commands:
       - "/sethome (×100), /home, /delhome"
-      - "/fly, /speed 10, /god, /v"
+      - "/fly, /speed 10, /god"
       - "/inv (просмотр чужих инвентарей)"
       - "/enderchest (свой и чужой)"
       - "/kit arisplus — Prot V незеритка + Sharp VI / Fire Aspect III"
-      - "/tpa, /tphere, /back, /top, /jump"
+      - "/tpa, /back, /top, /jump"
       - "/skull, /hat, /repair, /craft"
-      - "/v (vanish), /nick"
+      - "/nick"
 
 # ────────────────────────────────────────────────────────────────
 # КИТЫ — у каждого ранга свой кит. Можно расширить shulker-contents.
