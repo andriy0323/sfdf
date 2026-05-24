@@ -1,0 +1,28 @@
+name: ArisGuard
+version: ${project.version}
+main: me.arisguard.ArisGuardPlugin
+api-version: '1.21'
+description: Защита от DDoS/flood-подключений и несанкционированного OP
+author: Aris
+load: STARTUP
+
+commands:
+  arisguard:
+    description: Управление ArisGuard
+    aliases: [ag]
+    permission: arisguard.admin
+    usage: |
+      /arisguard reload
+      /arisguard add <ник>
+      /arisguard remove <ник>
+      /arisguard list
+      /arisguard status
+      /arisguard unblock <ip>
+
+permissions:
+  arisguard.admin:
+    description: Управление ArisGuard
+    default: op
+  arisguard.bypass.ddos:
+    description: Обходить лимиты DDoS-защиты
+    default: false

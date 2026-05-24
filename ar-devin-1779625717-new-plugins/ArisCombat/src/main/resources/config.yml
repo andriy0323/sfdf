@@ -1,0 +1,39 @@
+# ArisCombat — настройки боевого тэга (КТ)
+
+combat:
+  # Длительность КТ при PvP в секундах
+  duration-seconds: 20
+
+  # Action-bar внизу экрана с обратным отсчётом
+  action-bar: true
+
+  # Текст action-bar (плейсхолдеры: %seconds%)
+  action-bar-text: "&c⚔ КТ: &e%seconds% сек &7— флай и команды отключены"
+
+  # Сообщения
+  on-tag-message: "&c⚔ Вы вступили в бой! Флай и команды отключены на %seconds% сек."
+  on-end-message: "&aБой окончен. Можно использовать команды и флай."
+  on-disconnect-broadcast: "&c⚔ &e%player% &cвышел во время КТ — позор!"
+
+  # Если игрок отключился во время КТ — убить его (combat log)
+  kill-on-disconnect: true
+  # Дополнительно: бросить инвентарь и опыт как при смерти (если kill-on-disconnect=true)
+  drop-inventory-on-disconnect: true
+
+  # Команды, разрешённые во время КТ (whitelist; всё остальное блокируется).
+  # Совпадение по началу команды (case-insensitive). Поставь [] чтобы заблокировать всё.
+  allowed-commands:
+    - msg
+    - tell
+    - w
+    - pm
+    - r
+    - reply
+    - ct
+    - combat
+    - combattag
+    - кт
+
+  # Сообщение при попытке использовать заблокированную команду
+  on-blocked-command: "&c⚔ Эту команду нельзя использовать во время КТ. Осталось: &e%seconds% сек"
+  on-blocked-fly:     "&c⚔ Флай отключён во время КТ. Осталось: &e%seconds% сек"
