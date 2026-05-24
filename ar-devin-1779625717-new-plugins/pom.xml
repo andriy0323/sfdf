@@ -19,6 +19,7 @@
         <module>ArisAuction</module>
         <module>ArisChat</module>
         <module>ArisPets</module>
+        <module>ArisGuard</module>
     </modules>
 
     <properties>
