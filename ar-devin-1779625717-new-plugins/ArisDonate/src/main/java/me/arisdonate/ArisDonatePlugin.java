@@ -104,6 +104,7 @@ public class ArisDonatePlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SphereShopListener(this), this);
         getServer().getPluginManager().registerEvents(new me.arisdonate.listeners.CharsGuiListener(this), this);
         getServer().getPluginManager().registerEvents(new me.arisdonate.listeners.TelekinesisListener(this), this);
+        getServer().getPluginManager().registerEvents(new me.arisdonate.listeners.DonateGodRestrictionsListener(this), this);
         getServer().getPluginManager().registerEvents(new FreezeMoveListener(this), this);
         getServer().getPluginManager().registerEvents(new CommandSpyListener(this), this);
 
