@@ -37,6 +37,7 @@ public class ArisDonatePlugin extends JavaPlugin {
     private DonateGui donateGui;
     private KitsGui kitsGui;
     private SphereShopGui sphereShopGui;
+    private me.arisdonate.gui.CharsGui charsGui;
     private SphereManager sphereManager;
     private EconomyManager economyManager;
     private PermissionService permissionService;
@@ -47,6 +48,8 @@ public class ArisDonatePlugin extends JavaPlugin {
     private NamespacedKey keyDonateRank;
     private NamespacedKey keyKitId;
     private NamespacedKey keySphereId;
+    private NamespacedKey keyCharId;
+    private NamespacedKey keyTelekinesis;
 
     private static final int CONFIG_VERSION = 3;
 
@@ -58,6 +61,8 @@ public class ArisDonatePlugin extends JavaPlugin {
         keyDonateRank = new NamespacedKey(this, "donate_rank");
         keyKitId = new NamespacedKey(this, "kit_id");
         keySphereId = new NamespacedKey(this, "sphere_id");
+        keyCharId = new NamespacedKey(this, "char_id");
+        keyTelekinesis = new NamespacedKey(this, "telekinesis");
 
         // SphereManager должен инициализироваться ДО KitManager,
         // потому что киты могут ссылаться на сферы через { sphere: <id> }.
@@ -81,6 +86,7 @@ public class ArisDonatePlugin extends JavaPlugin {
         donateGui = new DonateGui(this);
         kitsGui = new KitsGui(this);
         sphereShopGui = new SphereShopGui(this);
+        charsGui = new me.arisdonate.gui.CharsGui(this);
         permissionService = new PermissionService(this);
         permissionService.refreshAll();
         visitorsManager = new VisitorsManager(this);
@@ -96,6 +102,8 @@ public class ArisDonatePlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new DonateGuiListener(this), this);
         getServer().getPluginManager().registerEvents(new KitsGuiListener(this), this);
         getServer().getPluginManager().registerEvents(new SphereShopListener(this), this);
+        getServer().getPluginManager().registerEvents(new me.arisdonate.listeners.CharsGuiListener(this), this);
+        getServer().getPluginManager().registerEvents(new me.arisdonate.listeners.TelekinesisListener(this), this);
         getServer().getPluginManager().registerEvents(new FreezeMoveListener(this), this);
         getServer().getPluginManager().registerEvents(new CommandSpyListener(this), this);
 
@@ -236,6 +244,9 @@ public class ArisDonatePlugin extends JavaPlugin {
         bind("effect", new EffectCommand(this));
         bind("kit", new KitCommand(this));
         bind("kits", new KitListCommand(this));
+        me.arisdonate.commands.CharsCommand charsCmd = new me.arisdonate.commands.CharsCommand(this);
+        bind("chars", charsCmd);
+        bind("char", charsCmd);
         bind("check", new CheckCommand(this));
         bind("c", new ClearChatCommand(this));
         // /shop теперь регистрируется только в RegionBlocks (общий магазин);
@@ -306,11 +317,14 @@ public class ArisDonatePlugin extends JavaPlugin {
         }
     }
 
-    public NamespacedKey keyDonateRank() { return keyDonateRank; }
-    public NamespacedKey keyKitId()      { return keyKitId; }
-    public NamespacedKey keySphereId()   { return keySphereId; }
-    public KitsGui getKitsGui()          { return kitsGui; }
-    public DonateGui getDonateGui()      { return donateGui; }
+    public NamespacedKey keyDonateRank()  { return keyDonateRank; }
+    public NamespacedKey keyKitId()       { return keyKitId; }
+    public NamespacedKey keySphereId()    { return keySphereId; }
+    public NamespacedKey keyCharId()      { return keyCharId; }
+    public NamespacedKey keyTelekinesis() { return keyTelekinesis; }
+    public KitsGui getKitsGui()           { return kitsGui; }
+    public DonateGui getDonateGui()       { return donateGui; }
+    public me.arisdonate.gui.CharsGui getCharsGui() { return charsGui; }
     public SphereShopGui getSphereShopGui() { return sphereShopGui; }
     public SphereManager getSphereManager() { return sphereManager; }
     public EconomyManager getEconomyManager() { return economyManager; }

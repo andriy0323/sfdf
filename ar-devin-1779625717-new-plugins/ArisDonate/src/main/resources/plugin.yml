@@ -397,6 +397,17 @@ commands:
   kits:
     description: Список китов
 
+  chars:
+    description: Открыть GUI каталога чаров (наложение чар на инструменты)
+    aliases: [char]
+    usage: |
+      /chars                — открыть GUI
+      /chars list           — текстовый список
+      /chars <key> [level]  — наложить чару прямо на предмет в руке
+      /chars remove <key>   — снять чару
+    permission: arisdonate.chars
+    permission-default: op
+
   check:
     description: Информация об игроке (для стаффа)
     permission: arisdonate.check
@@ -478,3 +489,7 @@ permissions:
       arisdonate.kit.*: true
       arisdonate.check: true
       arisdonate.sphere.admin: true
+      arisdonate.chars: true
+  arisdonate.chars:
+    description: Доступ к /chars (накидывание чар на предметы)
+    default: op
