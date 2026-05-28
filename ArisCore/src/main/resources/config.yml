@@ -1,0 +1,18 @@
+# ArisCore master config
+server-name: ArisWorld
+
+tab:
+  enabled: true
+  refresh-ticks: 40
+
+scoreboard:
+  enabled: true
+
+regions:
+  default-radius: 20
+
+economy:
+  start-balance: 100
+
+auth:
+  session-minutes: 5

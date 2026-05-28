@@ -1,0 +1,87 @@
+name: ArisCore
+version: ${project.version}
+main: me.ariscore.ArisCorePlugin
+api-version: '1.21'
+description: Single-jar Aris server core (auth, economy, kits, shop, regions, donates, crates, scoreboard, TAB).
+authors: [Aris, AndryshaOff]
+
+commands:
+  # auth
+  register:    { description: Register, aliases: [reg] }
+  login:       { description: Login, aliases: [l] }
+  changepass:  { description: Change password }
+  oper:        { description: "OP whitelist (reload/add/remove/list)" }
+
+  # economy
+  aris:        { description: "Aris currency (balance/give/giveall/set/reset/pay)", aliases: [arises] }
+  a:           { description: "Alias for /aris" }
+
+  # teleport
+  spawn:       { description: Teleport to spawn }
+  setspawn:    { description: Set spawn (admin) }
+  tpa:         { description: Send teleport request, aliases: [tpask] }
+  tpaccept:    { description: Accept TPA, aliases: [tpyes] }
+  tpadeny:     { description: Deny TPA, aliases: [tpno] }
+  setwarp:     { description: Set warp }
+  warp:        { description: Teleport to warp }
+  delwarp:     { description: Delete warp }
+  warps:       { description: List warps }
+
+  # shop
+  shop:        { description: Open shop GUI }
+
+  # kits
+  kits:        { description: Open kits GUI }
+  kit:         { description: Claim kit }
+  free:        { description: Claim starter kit }
+
+  # donates
+  donate:      { description: Open donate GUI }
+  don:         { description: Alias /donate }
+  arisdonate:  { description: "Admin: donate management" }
+  ad:          { description: Alias /arisdonate }
+
+  # regions
+  rg:          { description: "Private regions (info/flag/addowner/addmember/rename/list)" }
+  region:      { description: Alias /rg }
+  regionblock: { description: Get a Region Block }
+
+  # crates
+  dc:          { description: "Donate crates (list/place/remove/preview)" }
+
+  # utility
+  speed:       { description: Set walk/fly speed }
+  v:           { description: Vanish }
+  vanish:      { description: Vanish }
+  god:         { description: God mode }
+  fly:         { description: Toggle fly }
+  heal:        { description: Heal yourself }
+  feed:        { description: Feed yourself }
+  gmc:         { description: Creative }
+  gms:         { description: Survival }
+  gma:         { description: Adventure }
+  gmsp:        { description: Spectator }
+  gm:          { description: "Gamemode <s|c|a|sp>" }
+  ariscorereload: { description: Reload all ArisCore configs }
+
+permissions:
+  ariscore.admin:
+    description: Full admin access
+    default: op
+    children:
+      ariscore.speed: true
+      ariscore.vanish: true
+      ariscore.vanish.see: true
+      ariscore.god: true
+      ariscore.fly: true
+      ariscore.heal: true
+      ariscore.feed: true
+      ariscore.gamemode: true
+  ariscore.speed:   { default: op }
+  ariscore.vanish:  { default: op }
+  ariscore.vanish.see: { default: op }
+  ariscore.god:     { default: op }
+  ariscore.fly:     { default: op }
+  ariscore.heal:    { default: op }
+  ariscore.feed:    { default: op }
+  ariscore.gamemode:{ default: op }

@@ -1,0 +1,4 @@
+# Whitelist of nicknames that are allowed to be OP.
+# Edit this file and run /oper reload in-game to re-apply.
+operators:
+  - AndryshaOff

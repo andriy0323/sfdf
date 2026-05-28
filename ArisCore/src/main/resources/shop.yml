@@ -1,0 +1,23 @@
+# /shop GUI catalog. Prices range from 100 to 2500 aris.
+items:
+  dirt:        { material: DIRT,           amount: 64, price: 100,  slot: 10, name: Dirt,        start-hex: 8B4513, end-hex: A0522D }
+  cobblestone: { material: COBBLESTONE,    amount: 64, price: 200,  slot: 11, name: Cobblestone, start-hex: 808080, end-hex: A9A9A9 }
+  stone:       { material: STONE,          amount: 64, price: 300,  slot: 12, name: Stone,       start-hex: 808080, end-hex: D3D3D3 }
+  oak:         { material: OAK_LOG,        amount: 32, price: 400,  slot: 13, name: "Oak Log",   start-hex: 8B4513, end-hex: DEB887 }
+  spruce:      { material: SPRUCE_LOG,     amount: 32, price: 450,  slot: 14, name: "Spruce Log",start-hex: 654321, end-hex: 8B4513 }
+  birch:       { material: BIRCH_LOG,      amount: 32, price: 500,  slot: 15, name: "Birch Log", start-hex: FFFFE0, end-hex: DEB887 }
+  iron-ore:    { material: IRON_ORE,       amount: 16, price: 800,  slot: 16, name: "Iron Ore",  start-hex: A9A9A9, end-hex: D3D3D3 }
+  gold-ore:    { material: GOLD_ORE,       amount: 16, price: 1200, slot: 19, name: "Gold Ore",  start-hex: FFD700, end-hex: FFA500 }
+  diamond-ore: { material: DIAMOND_ORE,    amount: 8,  price: 2500, slot: 20, name: "Diamond Ore", start-hex: 00FFFF, end-hex: 1E90FF }
+  iron-block:  { material: IRON_BLOCK,     amount: 16, price: 1500, slot: 21, name: "Iron Block",start-hex: A9A9A9, end-hex: D3D3D3 }
+  gold-block:  { material: GOLD_BLOCK,     amount: 16, price: 2200, slot: 22, name: "Gold Block",start-hex: FFD700, end-hex: FFA500 }
+  diamond:     { material: DIAMOND,        amount: 8,  price: 2400, slot: 23, name: "Diamond",   start-hex: 00FFFF, end-hex: 1E90FF }
+  glass:       { material: GLASS,          amount: 64, price: 250,  slot: 24, name: "Glass",     start-hex: ADD8E6, end-hex: B0E0E6 }
+  glowstone:   { material: GLOWSTONE,      amount: 16, price: 700,  slot: 25, name: "Glowstone", start-hex: FFD700, end-hex: FFFF00 }
+  sand:        { material: SAND,           amount: 64, price: 150,  slot: 28, name: "Sand",      start-hex: F4A460, end-hex: FFE4B5 }
+  gravel:      { material: GRAVEL,         amount: 64, price: 200,  slot: 29, name: "Gravel",    start-hex: 808080, end-hex: A9A9A9 }
+  netherrack:  { material: NETHERRACK,     amount: 64, price: 300,  slot: 30, name: "Netherrack",start-hex: 8B0000, end-hex: A52A2A }
+  quartz:      { material: QUARTZ_BLOCK,   amount: 32, price: 600,  slot: 31, name: "Quartz",    start-hex: FFFFE0, end-hex: F5F5DC }
+  endstone:    { material: END_STONE,      amount: 32, price: 1100, slot: 32, name: "End Stone", start-hex: FFFFE0, end-hex: F5F5DC }
+  obsidian:    { material: OBSIDIAN,       amount: 16, price: 1800, slot: 33, name: "Obsidian",  start-hex: 4B0082, end-hex: 800080 }
+  tnt:         { material: TNT,            amount: 8,  price: 1000, slot: 34, name: "TNT",       start-hex: FF0000, end-hex: B22222 }

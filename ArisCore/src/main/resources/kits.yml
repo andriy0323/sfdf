@@ -1,0 +1,193 @@
+kits:
+  starter:
+    name: Starter
+    start-hex: 7CFC00
+    end-hex: 32CD32
+    icon: GRASS_BLOCK
+    cooldown: 7d
+    starter: true
+    gui-slot: 10
+    description:
+      - "<gray>One-time starter kit for new players."
+      - "<gray>Includes basic tools and food."
+    items:
+      - "STONE_PICKAXE 1"
+      - "STONE_AXE 1"
+      - "STONE_SHOVEL 1"
+      - "STONE_SWORD 1"
+      - "BREAD 16"
+      - "TORCH 32"
+
+  daily:
+    name: Daily
+    start-hex: 00BFFF
+    end-hex: 1E90FF
+    icon: BLUE_DYE
+    cooldown: 2h
+    gui-slot: 11
+    description:
+      - "<gray>Daily kit. Cooldown <yellow>2h</yellow>."
+    items:
+      - "IRON_INGOT 8"
+      - "GOLDEN_APPLE 2"
+      - "COOKED_BEEF 16"
+
+  vip:
+    name: VIP
+    start-hex: 7CFC00
+    end-hex: 32CD32
+    icon: LIME_DYE
+    cooldown: 1d
+    donate-required: vip
+    gui-slot: 19
+    description:
+      - "<gray>VIP donate kit."
+    items:
+      - "DIAMOND_PICKAXE 1"
+      - "DIAMOND_SWORD 1"
+      - "GOLDEN_APPLE 5"
+      - "IRON_BLOCK 4"
+
+  premium:
+    name: Premium
+    start-hex: 00CED1
+    end-hex: 1E90FF
+    icon: CYAN_DYE
+    cooldown: 1d
+    donate-required: premium
+    gui-slot: 20
+    description:
+      - "<gray>Premium kit."
+    items:
+      - "DIAMOND_HELMET 1"
+      - "DIAMOND_CHESTPLATE 1"
+      - "DIAMOND_LEGGINGS 1"
+      - "DIAMOND_BOOTS 1"
+
+  elite:
+    name: Elite
+    start-hex: 9400D3
+    end-hex: BA55D3
+    icon: PURPLE_DYE
+    cooldown: 2d
+    donate-required: elite
+    gui-slot: 21
+    description:
+      - "<gray>Elite kit."
+    items:
+      - "DIAMOND_PICKAXE 1"
+      - "ENDER_PEARL 8"
+      - "GOLDEN_APPLE 10"
+      - "DIAMOND 16"
+
+  hero:
+    name: Hero
+    start-hex: FF8C00
+    end-hex: FFA500
+    icon: ORANGE_DYE
+    cooldown: 2d
+    donate-required: hero
+    gui-slot: 22
+    description:
+      - "<gray>Hero kit."
+    items:
+      - "NETHERITE_INGOT 1"
+      - "GOLDEN_APPLE 16"
+      - "DIAMOND 32"
+
+  legend:
+    name: Legend
+    start-hex: FFD700
+    end-hex: FF6A00
+    icon: YELLOW_DYE
+    cooldown: 5d
+    donate-required: legend
+    gui-slot: 23
+    description:
+      - "<gray>Legend kit."
+    items:
+      - "NETHERITE_PICKAXE 1"
+      - "NETHERITE_SWORD 1"
+      - "ENCHANTED_GOLDEN_APPLE 2"
+
+  mythic:
+    name: Mythic
+    start-hex: FF1493
+    end-hex: FF69B4
+    icon: PINK_DYE
+    cooldown: 7d
+    donate-required: mythic
+    gui-slot: 24
+    description:
+      - "<gray>Mythic kit."
+    items:
+      - "NETHERITE_HELMET 1"
+      - "NETHERITE_CHESTPLATE 1"
+      - "NETHERITE_LEGGINGS 1"
+      - "NETHERITE_BOOTS 1"
+
+  divine:
+    name: Divine
+    start-hex: FF4500
+    end-hex: DC143C
+    icon: RED_DYE
+    cooldown: 10d
+    donate-required: divine
+    gui-slot: 25
+    description:
+      - "<gray>Divine kit."
+    items:
+      - "NETHERITE_HELMET 1"
+      - "NETHERITE_CHESTPLATE 1"
+      - "NETHERITE_LEGGINGS 1"
+      - "NETHERITE_BOOTS 1"
+      - "ENCHANTED_GOLDEN_APPLE 8"
+
+  titan:
+    name: Titan
+    start-hex: 8B0000
+    end-hex: FF4500
+    icon: BROWN_DYE
+    cooldown: 14d
+    donate-required: titan
+    gui-slot: 28
+    description:
+      - "<gray>Titan kit."
+    items:
+      - "TOTEM_OF_UNDYING 4"
+      - "ELYTRA 1"
+      - "ENCHANTED_GOLDEN_APPLE 16"
+
+  ultimate:
+    name: Ultimate
+    start-hex: 00FFFF
+    end-hex: 00FF00
+    icon: LIGHT_BLUE_DYE
+    cooldown: 20d
+    donate-required: ultimate
+    gui-slot: 29
+    description:
+      - "<gray>Ultimate kit."
+    items:
+      - "TOTEM_OF_UNDYING 8"
+      - "BEACON 1"
+      - "NETHER_STAR 2"
+
+  aris:
+    name: Aris
+    start-hex: FFD700
+    end-hex: FF1493
+    icon: NETHER_STAR
+    cooldown: 30d
+    donate-required: aris
+    gui-slot: 30
+    description:
+      - "<gray>The Aris kit. The most powerful."
+    items:
+      - "NETHERITE_HELMET 1"
+      - "NETHERITE_CHESTPLATE 1"
+      - "NETHERITE_LEGGINGS 1"
+      - "NETHERITE_BOOTS 1"
+      - "TOTEM_OF_UNDYING 16"
+      - "BEACON 4"
+      - "NETHER_STAR 16"
