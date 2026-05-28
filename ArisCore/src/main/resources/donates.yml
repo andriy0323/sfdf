@@ -1,0 +1,424 @@
+# All donate / staff ranks shown in /donate, /don and in TAB.
+# - lower-weight donate cannot replace a higher-weight one (DonateManager#give)
+# - staff:true ranks are NOT shown in /donate GUI
+# - "donate-required" of a kit/crate must match an id below
+#
+# Style of the rank name uses two hex colours (start/end) interpolated as RGB.
+ranks:
+
+  # ---------- regular donates (shown in /donate GUI) ----------
+
+  vip:
+    name: VIP
+    start-hex: 7CFC00
+    end-hex: 32CD32
+    weight: 10
+    region-limit: 1
+    home-limit: 2
+    shulker: LIME_SHULKER_BOX
+    gui-slot: 10
+    kit-id: vip
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- /fly in spawn"
+      - "<gray>- 2 /sethome"
+      - "<gray>- VIP kit"
+    permissions:
+      - ariscore.kit.vip
+      - ariscore.tag.vip
+    commands: []
+
+  premium:
+    name: Premium
+    start-hex: 00CED1
+    end-hex: 1E90FF
+    weight: 20
+    region-limit: 1
+    home-limit: 3
+    shulker: CYAN_SHULKER_BOX
+    gui-slot: 11
+    kit-id: premium
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- /fly in spawn"
+      - "<gray>- 3 /sethome"
+      - "<gray>- Premium kit"
+    permissions:
+      - ariscore.kit.premium
+      - ariscore.tag.premium
+
+  elite:
+    name: Elite
+    start-hex: 9400D3
+    end-hex: BA55D3
+    weight: 30
+    region-limit: 2
+    home-limit: 4
+    shulker: PURPLE_SHULKER_BOX
+    gui-slot: 12
+    kit-id: elite
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- /fly"
+      - "<gray>- 4 /sethome"
+      - "<gray>- Elite kit"
+    permissions:
+      - ariscore.kit.elite
+      - ariscore.fly
+      - ariscore.tag.elite
+
+  hero:
+    name: Hero
+    start-hex: FF8C00
+    end-hex: FFA500
+    weight: 40
+    region-limit: 2
+    home-limit: 5
+    shulker: ORANGE_SHULKER_BOX
+    gui-slot: 13
+    kit-id: hero
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- /fly"
+      - "<gray>- 5 /sethome"
+      - "<gray>- Hero kit"
+    permissions:
+      - ariscore.kit.hero
+      - ariscore.fly
+      - ariscore.feed
+      - ariscore.tag.hero
+
+  legend:
+    name: Legend
+    start-hex: FFD700
+    end-hex: FF6A00
+    weight: 50
+    region-limit: 3
+    home-limit: 7
+    shulker: YELLOW_SHULKER_BOX
+    gui-slot: 14
+    kit-id: legend
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- /fly /heal /feed"
+      - "<gray>- 7 /sethome"
+      - "<gray>- Legend kit"
+    permissions:
+      - ariscore.kit.legend
+      - ariscore.fly
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.tag.legend
+
+  mythic:
+    name: Mythic
+    start-hex: FF1493
+    end-hex: FF69B4
+    weight: 60
+    region-limit: 3
+    home-limit: 8
+    shulker: PINK_SHULKER_BOX
+    gui-slot: 15
+    kit-id: mythic
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- /fly /heal /feed /god"
+      - "<gray>- 8 /sethome"
+    permissions:
+      - ariscore.kit.mythic
+      - ariscore.fly
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.god
+      - ariscore.tag.mythic
+
+  divine:
+    name: Divine
+    start-hex: FF4500
+    end-hex: DC143C
+    weight: 70
+    region-limit: 4
+    home-limit: 10
+    shulker: RED_SHULKER_BOX
+    gui-slot: 16
+    kit-id: divine
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- /fly /heal /feed /god"
+      - "<gray>- 10 /sethome"
+      - "<gray>- Divine kit"
+    permissions:
+      - ariscore.kit.divine
+      - ariscore.fly
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.god
+      - ariscore.tag.divine
+
+  titan:
+    name: Titan
+    start-hex: 8B0000
+    end-hex: FF4500
+    weight: 80
+    region-limit: 5
+    home-limit: 12
+    shulker: BROWN_SHULKER_BOX
+    gui-slot: 19
+    kit-id: titan
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- /fly /speed /v /god /heal /feed"
+      - "<gray>- 12 /sethome"
+    permissions:
+      - ariscore.kit.titan
+      - ariscore.fly
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.god
+      - ariscore.speed
+      - ariscore.tag.titan
+
+  ultimate:
+    name: Ultimate
+    start-hex: 00FFFF
+    end-hex: 00FF00
+    weight: 90
+    region-limit: 5
+    home-limit: 15
+    shulker: LIGHT_BLUE_SHULKER_BOX
+    gui-slot: 20
+    kit-id: ultimate
+    description:
+      - "<gray>Permissions:"
+      - "<gray>- All non-admin commands"
+      - "<gray>- 15 /sethome"
+      - "<gray>- Ultimate kit"
+    permissions:
+      - ariscore.kit.ultimate
+      - ariscore.fly
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.god
+      - ariscore.speed
+      - ariscore.vanish
+      - ariscore.tag.ultimate
+
+  aris:
+    name: Aris
+    start-hex: FFD700
+    end-hex: FF1493
+    weight: 100
+    region-limit: 10
+    home-limit: 20
+    shulker: MAGENTA_SHULKER_BOX
+    gui-slot: 22
+    kit-id: aris
+    description:
+      - "<gray>The most powerful donate."
+      - "<gray>RGB everywhere, exclusive Aris kit,"
+      - "<gray>cosmetics and priority."
+    permissions:
+      - ariscore.kit.aris
+      - ariscore.fly
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.god
+      - ariscore.speed
+      - ariscore.vanish
+      - ariscore.tag.aris
+
+  # ---------- staff ranks (hidden from /donate GUI) ----------
+
+  helper:
+    name: Helper
+    start-hex: 90EE90
+    end-hex: 32CD32
+    weight: 120
+    region-limit: 5
+    home-limit: 10
+    shulker: GREEN_SHULKER_BOX
+    gui-slot: -1
+    kit-id: helper
+    staff: true
+    description: []
+    permissions:
+      - ariscore.kit.helper
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.fly
+      - ariscore.tag.helper
+
+  dhelper:
+    name: DHelper
+    start-hex: 7FFFD4
+    end-hex: 40E0D0
+    weight: 130
+    region-limit: 6
+    home-limit: 12
+    shulker: GREEN_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.kit.dhelper
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.fly
+
+  moder:
+    name: Moder
+    start-hex: 1E90FF
+    end-hex: 00BFFF
+    weight: 140
+    region-limit: 7
+    home-limit: 12
+    shulker: BLUE_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.kit.moder
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.fly
+      - ariscore.vanish
+
+  moder_gl:
+    name: "Moder GL"
+    start-hex: 4169E1
+    end-hex: 6495ED
+    weight: 145
+    region-limit: 8
+    home-limit: 14
+    shulker: BLUE_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.kit.moder
+      - ariscore.fly
+      - ariscore.vanish
+      - ariscore.heal
+      - ariscore.feed
+
+  ml_moder:
+    name: "ML Moder"
+    start-hex: 4682B4
+    end-hex: 5F9EA0
+    weight: 150
+    region-limit: 9
+    home-limit: 15
+    shulker: BLUE_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.kit.moder
+      - ariscore.fly
+      - ariscore.vanish
+      - ariscore.heal
+      - ariscore.feed
+
+  moder_sponsor:
+    name: "Moder Sponsor"
+    start-hex: 6A5ACD
+    end-hex: 7B68EE
+    weight: 155
+    region-limit: 10
+    home-limit: 16
+    shulker: PURPLE_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.kit.moder
+      - ariscore.fly
+      - ariscore.heal
+      - ariscore.feed
+      - ariscore.vanish
+
+  curator:
+    name: Curator
+    start-hex: BA55D3
+    end-hex: 9370DB
+    weight: 160
+    region-limit: 10
+    home-limit: 16
+    shulker: PURPLE_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.admin
+      - ariscore.kit.curator
+
+  admin:
+    name: Admin
+    start-hex: FF0000
+    end-hex: B22222
+    weight: 200
+    region-limit: 20
+    home-limit: 20
+    shulker: RED_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.admin
+
+  admin_d:
+    name: "Admin D"
+    start-hex: 8B0000
+    end-hex: B22222
+    weight: 205
+    region-limit: 20
+    home-limit: 20
+    shulker: RED_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.admin
+
+  admin_gl:
+    name: "Admin GL"
+    start-hex: 8B0000
+    end-hex: A52A2A
+    weight: 210
+    region-limit: 25
+    home-limit: 25
+    shulker: RED_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.admin
+
+  ml_admin:
+    name: "ML Admin"
+    start-hex: B22222
+    end-hex: FF0000
+    weight: 215
+    region-limit: 30
+    home-limit: 30
+    shulker: RED_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.admin
+
+  owner:
+    name: Owner
+    start-hex: FFD700
+    end-hex: FF1493
+    weight: 250
+    region-limit: 100
+    home-limit: 100
+    shulker: MAGENTA_SHULKER_BOX
+    gui-slot: -1
+    staff: true
+    description: []
+    permissions:
+      - ariscore.admin
+      - "*"

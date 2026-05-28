@@ -1,0 +1,45 @@
+# Donate crates: each crate is a chest spawned via /dc place <type>
+types:
+  free:
+    name: "Free Crate"
+    start-hex: 7CFC00
+    end-hex: 32CD32
+    icon: ENDER_CHEST
+    price: 0
+    rewards:
+      - { material: BREAD,        amount: 16, weight: 50, name: "Bread x16" }
+      - { material: IRON_INGOT,   amount: 8,  weight: 25, name: "Iron x8" }
+      - { material: DIAMOND,      amount: 2,  weight: 10, name: "Diamond x2" }
+      - { material: GOLDEN_APPLE, amount: 2,  weight: 5,  name: "Golden apple x2" }
+
+  paid:
+    name: "Aris Crate"
+    start-hex: FFD700
+    end-hex: FF6A00
+    icon: CHEST
+    price: 500
+    rewards:
+      - { material: IRON_INGOT,            amount: 32, weight: 40, name: "Iron x32" }
+      - { material: GOLDEN_APPLE,          amount: 4,  weight: 25, name: "Golden apple x4" }
+      - { material: DIAMOND,               amount: 8,  weight: 20, name: "Diamond x8" }
+      - { material: NETHERITE_INGOT,       amount: 1,  weight: 10, name: "Netherite ingot" }
+      - { material: ENCHANTED_GOLDEN_APPLE, amount: 1, weight: 5, name: "Enchanted apple" }
+
+  donate:
+    name: "Donate Crate"
+    start-hex: FF1493
+    end-hex: FFD700
+    icon: MAGENTA_SHULKER_BOX
+    price: 2500
+    donate-required: vip
+    rewards:
+      - { material: GOLDEN_APPLE, amount: 8,  weight: 30, name: "Golden apple x8" }
+      - { material: DIAMOND,      amount: 32, weight: 20, name: "Diamond x32" }
+      - { material: NETHER_STAR,  amount: 1,  weight: 10, name: "Nether Star" }
+      - { material: ELYTRA,       amount: 1,  weight: 8,  name: "Elytra" }
+      - { material: TOTEM_OF_UNDYING, amount: 4, weight: 8, name: "Totem x4" }
+      - { material: BEACON,       amount: 1,  weight: 5,  name: "Beacon" }
+      - { material: MAGENTA_SHULKER_BOX, amount: 1, weight: 3, name: "Donate: VIP",     donate: vip }
+      - { material: MAGENTA_SHULKER_BOX, amount: 1, weight: 2, name: "Donate: Premium", donate: premium }
+      - { material: MAGENTA_SHULKER_BOX, amount: 1, weight: 1, name: "Donate: Elite",   donate: elite }
+      - { material: MAGENTA_SHULKER_BOX, amount: 1, weight: 1, name: "Donate: Aris",    donate: aris }
